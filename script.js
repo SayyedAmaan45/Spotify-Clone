@@ -115,7 +115,9 @@ async function displayAlbum() {
             let folder = e.href.split("/").slice(-1)[0];
             // Push fetch promise to array
             fetchPromises.push(
-                fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`)
+                // fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`)
+                fetch(`https://spotify-clone-delta-one-53.vercel.app/songs/${folder}/info.json`)
+
                     .then(response => response.json())
                     .then(response => {
                         return {
