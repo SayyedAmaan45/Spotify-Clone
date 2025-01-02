@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
     --a: 0;
 }
+body.menu-open {
+    overflow: hidden;
+}
+
 
 * {
     margin: 0;
@@ -316,6 +320,8 @@ body {
     justify-content: center;
     align-items: center;
     gap: 14px;
+    cursor: pointer;
+
 }
 
 .cross {
@@ -323,9 +329,11 @@ body {
     cursor: pointer;
 }
 
+
+/* Media Queries */
 @media (max-width: 1200px) {
     .left {
-        position: absolute;
+        position: fixed;
         left: -120%;
         background-color: black;
         transition: all .3s;
@@ -333,7 +341,6 @@ body {
         width: 373px;
         padding: 0;
         height: 100vh;
-        position: fixed;
         top: 0;
     }
 
@@ -345,7 +352,7 @@ body {
     .left .cross {
         position: absolute;
         top: 31px;
-        right: 25PX;
+        right: 25px;
         width: 29px;
     }
 
@@ -384,7 +391,6 @@ body {
     .cardContainer {
         margin: 0;
         justify-content: center;
-
     }
 
     .cross {
@@ -396,13 +402,14 @@ body {
         gap: 23px;
         align-items: center;
     }
+
     .cardContainer {
         max-height: unset;
         overflow-y: unset;
         margin-bottom: 35vh;
     }
 
-    .playbar{
+    .playbar {
         right: 25px;
     }
 }
@@ -419,8 +426,8 @@ body {
     .buttons>* {
         margin: 0 6px;
     }
-    
-    .header{
+
+    .header {
         padding: 7px;
     }
 
@@ -428,22 +435,35 @@ body {
         padding: 4px;
     }
 
-    .library{
+    .library {
         height: 85vh;
     }
 
-    .left{ 
+    .left { 
         width: 100vw;
     }
 
+    .playbar {
+        width: calc(100vw - 20px);
+        right: 10px;
+    }
+
+    .seekbar {
+        width: calc(100vw - 30px);
+    }
 }
 
 @media (max-width: 480px) {
     .playbar {
         width: calc(100vw - 20px);
+        right: 0;
     }
 
     .seekbar {
         width: calc(100vw - 30px);
+    }
+
+    .hamburger {
+        font-size: 25px;
     }
 }
